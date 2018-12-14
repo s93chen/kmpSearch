@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 /** constructor */
 kmpSearcher::kmpSearcher(const string &pattern)
 {
@@ -18,7 +19,6 @@ kmpSearcher::~kmpSearcher()
 {
     delete[] lookup;
 }
-
 
 /**
  *  builds the lookup array for searching. 
@@ -41,7 +41,6 @@ void kmpSearcher::ptrnPreprocess()
         lookup[i] = j;
     }
 }
-
 
 /**
  *  finds the first occurence of pattern in line.
@@ -67,7 +66,6 @@ int kmpSearcher::kmpSearch(const string &line)
 
     return -1;
 }
-
 
 /**
  *  finds and highlights all occurences of
@@ -108,8 +106,8 @@ int main(int argc, char *argv[])
         cout << "text = " << text << endl;
         
         kmpSearcher kmp(pattern);
-//        kmp.ptrnPreprocess();
         kmp.searchLine(text);
+    
     } else {
         cerr << "usage: ";
         cerr << argv[0] << " " << "<pattern> <text>";    
